@@ -1,0 +1,72 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+		"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+		"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="il.ac.hit.mygym.Model.Activity" table="Activities">
+		<id name="id" type="long" column="ID" >
+			<generator class="increment"/>
+		</id>
+		<property name="name">
+			<column name="NAME"/>
+		</property>
+		<property name="type">
+			<column name="type"/>
+		</property>
+		<property name="muscleGroup">
+			<column name="muscleGroup"/>
+		</property>
+		<property name="duration">
+			<column name="duration"/>
+		</property>
+		<property name="numOfSets">
+			<column name="numOfSets"/>
+		</property>
+		<property name="numOfReps">
+			<column name="numOfReps"/>
+		</property>
+
+		<property name="defaultActivity">
+			<column name="defaultActivity"/>
+		</property>
+	</class>
+
+	<class name="il.ac.hit.mygym.Model.User" table="Usersdb">
+		<id name="userId" type="long" column="ID">
+			<generator class="increment"/>
+		</id>
+
+		<property name="username">
+			<column name="username"/>
+		</property>
+		<property name="password">
+			<column name="password"/>
+		</property>
+		<property name="weight">
+			<column name="weight"/>
+		</property>
+		<property name="height">
+			<column name="height"/>
+		</property>
+		<property name="bmi">
+			<column name="bmi"/>
+		</property>
+
+		<property name="email">
+			<column name="email"/>
+		</property>
+	</class>
+
+	<class name="il.ac.hit.mygym.Model.UserActivity" table="ActivitiesPerUser">
+		<id name="parId" type="long" column="parId">
+			<generator class="increment"/>
+		</id>
+		<property name="userId">
+			<column name="userId"/>
+		</property>
+		<property name="activityId">
+			<column name="activityId"/>
+		</property>
+
+	</class>
+</hibernate-mapping>
